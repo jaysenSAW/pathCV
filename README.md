@@ -45,8 +45,7 @@ The list of all the options and their default values are descirbed below.
  /!\ use the same as your MD engine for a correct lambda
  -vector: vector use to translate receptor ("1 0 0")
  -distmax: Maximum float use to multipliate the vector (3.2 nm)
- -method: How distance is computed RMSD, RMS or DRMSD: (default MSD)
- /!\ To increase speed with DRMSD use: INTER-DRMSD (faster)
+ -method: How distance is computed RMSD, MSD : (default MSD)
  ```
  more details about the computation are available [here](https://plumed.github.io/doc-v2.5/user-doc/html/_d_r_m_s_d.html)
  ```
@@ -58,15 +57,15 @@ The list of all the options and their default values are descirbed below.
 ##                              Example
 You can execute the script by using the command line:
 ```
-python pathCV_S_Z.py -g reference.pdb
+python main.py -g reference.pdb
 ```
 To change receptor and ligand respectively by A and E:
 ```
-python pathCV_S_Z.py -g reference.pdb -r B -l E
+python main.py -g reference.pdb -r B -l E
 ```
 To specify the translation vector
 ```
-python pathCV_S_Z.py -g reference.pdb -vector "0 0 1"
+python main.py -g reference.pdb -vector "0 0 1"
 ```
 ##                               Output
 
@@ -96,8 +95,5 @@ Example with a MSD method:
 
 ##                              UPCOMING FEATURES
 
-* PEP 8
 * Create curve path between state A and state B
 * optimal alignment
-* Add method rotation to class Model
-* Compatibility with Python 3.X
